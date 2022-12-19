@@ -27,7 +27,7 @@ int main()
     &(sinal que armazena valor à variável)*/
     printf("\nDigite o número de alunas: ");//SEGUNDA IMPRESSAO
     scanf("%d", &num_alunas); /*receber o dado com a funcao scanf  do tipo int identificado por
-    %d faz a leitura do dado digitado) que sera armazenado no espaço reservado para num_alunas,
+    %d (faz a leitura do dado digitado) que sera armazenado no espaço reservado para num_alunas,
     &(sinal que armazena valor à variável)*/
 
     printf("\n\nNúmero de alunos: %d\n", num_alunos);/*Apresentacao de resultados na tela com a função printf.
