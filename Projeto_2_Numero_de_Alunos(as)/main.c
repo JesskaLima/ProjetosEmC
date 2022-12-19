@@ -23,10 +23,12 @@ int main()
     //INICIO DA LOGICA DE PROGRAMACAO
     printf("\n\nDigite o número de alunos: ");//INICIO DE INTERAÇÃO
     scanf("%d", &num_alunos); /*receber o dado com a funcao scanf  do tipo int identificado por
-    %d que sera armazenado no espaço reservado para num_alunos, &(sinal que reserva valor à variável)*/
+    %d(faz a leitura do dado digitado) que sera armazenado no espaço reservado para num_alunos,
+    &(sinal que armazena valor à variável)*/
     printf("\nDigite o número de alunas: ");//SEGUNDA IMPRESSAO
     scanf("%d", &num_alunas); /*receber o dado com a funcao scanf  do tipo int identificado por
-    %d que sera armazenado no espaço reservado para num_alunas, &(sinal que reserva valor à variável)*/
+    %d faz a leitura do dado digitado) que sera armazenado no espaço reservado para num_alunas,
+    &(sinal que armazena valor à variável)*/
 
     printf("\n\nNúmero de alunos: %d\n", num_alunos);/*Apresentacao de resultados na tela com a função printf.
     Onde está o %d, será apresentado o valor de uma variável do tipo int, que por sua vez é identificada
