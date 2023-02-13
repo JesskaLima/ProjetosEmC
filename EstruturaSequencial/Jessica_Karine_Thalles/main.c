@@ -92,43 +92,43 @@ modalidadesContador[i] = 0;
 
 // Verificando as modalidades únicas
 for (i = 0; i < tamanho; i++) {
-int existe = 0;
-for (j = 0; j < modalidadesTamanho; j++) {
-if (strcmp(atletas[i].modalidade, modalidades[j]) == 0) {
-existe = 1;
-modalidadesContador[j]++;
-break;
-}
-}
-if (!existe) {
-  strcpy(modalidades[modalidadesTamanho], atletas[i].modalidade);
-  modalidadesContador[modalidadesTamanho]++;
-  modalidadesTamanho++;
-}
+        int existe = 0;
+        for (j = 0; j < modalidadesTamanho; j++) {
+                if (strcmp(atletas[i].modalidade, modalidades[j]) == 0) {
+                    existe = 1;
+                    modalidadesContador[j]++;
+                    break;
+                }
+        }
+        if (!existe) {
+                strcpy(modalidades[modalidadesTamanho], atletas[i].modalidade);
+                modalidadesContador[modalidadesTamanho]++;
+                modalidadesTamanho++;
+                }
 }
 
 // Ordenando as modalidades por ordem alfabética
 for (i = 0; i < modalidadesTamanho; i++) {
-for (j = i + 1; j < modalidadesTamanho; j++) {
-if (strcmp(modalidades[i], modalidades[j]) > 0) {
-strcpy(temp.modalidade, modalidades[i]);
-strcpy(modalidades[i], modalidades[j]);
-strcpy(modalidades[j], temp.modalidade);
-int tempContador = modalidadesContador[i];
-    modalidadesContador[i] = modalidadesContador[j];
-    modalidadesContador[j] = tempContador;
-  }
-}
+        for (j = i + 1; j < modalidadesTamanho; j++) {
+            if (strcmp(modalidades[i], modalidades[j]) > 0) {
+                strcpy(temp.modalidade, modalidades[i]);
+                strcpy(modalidades[i], modalidades[j]);
+                strcpy(modalidades[j], temp.modalidade);
+                int tempContador = modalidadesContador[i];
+                modalidadesContador[i] = modalidadesContador[j];
+                modalidadesContador[j] = tempContador;
+            }
+        }
 }
 
 // Imprimindo os atletas por modalidade
 for (i = 0; i < modalidadesTamanho; i++) {
-printf("\nModalidade: %s\n", modalidades[i]);
-for (j = 0; j < tamanho; j++) {
-if (strcmp(atletas[j].modalidade, modalidades[i]) == 0) {
-imprimirAtleta(atletas[j]);
-}
-}
+        printf("\nModalidade: %s\n", modalidades[i]);
+        for (j = 0; j < tamanho; j++) {
+                if (strcmp(atletas[j].modalidade, modalidades[i]) == 0) {
+                    imprimirAtleta(atletas[j]);
+                }
+        }
 }
 }
 
