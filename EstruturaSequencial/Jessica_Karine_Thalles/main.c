@@ -131,7 +131,6 @@ for (i = 0; i < modalidadesTamanho; i++) {
 }
 }
 
-
 int main() {
 
   // Vetor de atletas
