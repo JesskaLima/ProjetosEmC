@@ -13,7 +13,7 @@ O trabalho deve ser desenvolvido em grupos de, no máximo, 3 pessoas, e será apre
 #define MAX_ATHLETES 10
 #define MAX_NAME 100
 #define MAX_MODALITY 50
-#define TAMANHO 10
+#define TAMANHO 2
 
 // Estrutura para armazenar os dados de um atleta
 typedef struct Atleta {
@@ -43,8 +43,8 @@ void imprimirAtletas(Atleta atletas[], int tamanho) {
 // Função para obter os dados de um atleta
 void obterAtleta(Atleta *atleta) {
   printf("Informe o nome do atleta: ");
-  scanf("%s", atleta->nome);
-  fflush(stdin);
+  fgets(atleta->nome, MAX_NAME, stdin);
+  atleta->nome[strcspn(atleta->nome, "\n")] = 0;
 
   printf("Informe o peso do atleta: ");
   scanf("%f", &atleta->peso);
@@ -59,14 +59,13 @@ void obterAtleta(Atleta *atleta) {
   fflush(stdin);
 
   printf("\nxxxxxxxxxxx\n\n");
-  fflush(stdin);
 }
 
 // Função para calcular a média de peso e altura dos atletas
 void calcularMedias(Atleta atletas[], int tamanho, float *mediaPeso,
                     float *mediaAltura) {
   int i;
-  float totalPeso = 0.0, totalAltura = 0.0;
+  float totalPeso = 0.00, totalAltura = 0.00;
 
   for (i = 0; i < tamanho; i++) {
     totalPeso += atletas[i].peso;
@@ -134,6 +133,7 @@ for (i = 0; i < modalidadesTamanho; i++) {
 
 
 int main() {
+
   // Vetor de atletas
   Atleta atletas[TAMANHO];
 
@@ -143,22 +143,32 @@ int main() {
   }
 
   // Imprimindo os dados de todos os atletas
+  printf("IMPRIMINDO OS DADOS DE TODOS O ATLETAS\n\n");
   imprimirAtletas(atletas, TAMANHO);
+  printf("\nxxxxxxxxxxxxxxxxxxx\n\n");
 
   // Imprimindo os dados de um atleta
   int indice;
-  printf("\nInforme o índice do atleta (1 a %d): ", TAMANHO);
+  printf("\nInforme o indice do atleta (1 a %d): ", TAMANHO);
   scanf("%d", &indice);
+  printf("\nxxxxxxxxxxxxxxxxxxx\n\n");
+  printf("\nIMPRIMINDO OS DADOS DE UM ATLETA\n");
   imprimirAtleta(atletas[indice - 1]);
+  printf("\nxxxxxxxxxxxxxxxxxxx\n\n");
 
   // Calculando o peso médio e a altura média dos atletas
   float mediaPeso, mediaAltura;
   calcularMedias(atletas, TAMANHO, &mediaPeso, &mediaAltura);
-  printf("\nPeso médio: %.2f\n", mediaPeso);
-  printf("Altura média: %.2f\n", mediaAltura);
+  printf("\nPESO MEDIO E ALTURA MEDIA DOS ATLETAS\n\n");
+  printf("\nPeso medio: %.2f\n", mediaPeso);
+  printf("Altura media: %.2f\n", mediaAltura);
+  printf("\nxxxxxxxxxxxxxxxxxxx\n\n");
 
   // Listando os atletas por modalidade
+  printf("LISTANDO OS ATLETAS POR MODALIDADE\n");
   listarPorModalidade(atletas, TAMANHO);
+
+  getchar();
 
   return 0;
 }
